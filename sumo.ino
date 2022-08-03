@@ -1,12 +1,12 @@
 #define obstaclePin A0 // Sensor de obstaculos
 #define reflet1Pin A1 // Sensor de refletancia 1 (Esquerda)
 #define reflet2Pin A2 // Sensor de refletancia 2 (Direita)
-#define lMotorPin D3 // Conecta na pH (Motor Esquerdo)
-#define lDirPin D4 // pH Motor Esquerdo sentido direto (primeira entrada)
-#define lRevPin D2 // pH Motor Esquerdo sentido inverso (segunda entrada)
-#define rMotorPin D6 // Conecta na pH (Motor Direito)
-#define rDirPin D7 // pH Motor Direito sentido direto (primeira entrada)
-#define rRevPin D8 // pH Motor Direito sentido inverso (segunda entrada)
+#define lMotorPin 3 // Conecta na pH (Motor Esquerdo)
+#define lDirPin 4 // pH Motor Esquerdo sentido direto (primeira entrada)
+#define lRevPin 2 // pH Motor Esquerdo sentido inverso (segunda entrada)
+#define rMotorPin 6 // Conecta na pH (Motor Direito)
+#define rDirPin 7 // pH Motor Direito sentido direto (primeira entrada)
+#define rRevPin 8 // pH Motor Direito sentido inverso (segunda entrada)
 
 int obstacle, reflet1, reflet2, lMotorSpeed, rMotorSpeed;
 bool rDirect, rReverse, lDirect, lReverse;
@@ -33,7 +33,7 @@ void sendMotors(int lmotor, bool ldir, bool lrev, int rmotor, bool rdir, bool rr
     digitalWrite(rRevPin, rrev);
 
     // Velocidade do motor direito
-    analogwrite(rMotorPin, rmotor);
+    analogWrite(rMotorPin, rmotor);
 }
 
 void loop() {
